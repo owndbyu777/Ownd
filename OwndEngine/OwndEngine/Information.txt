@@ -1,0 +1,43 @@
+TODO:
+
+ - Create Engine
+
+ Install SDL
+ Install GLEW
+ Install GLM
+
+ Open Window
+ Handle Input
+
+ Shaders
+
+ Camera
+	- Camera Culling
+
+ Sprites
+	- Transparency
+	- Rotation
+
+ glDrawElements
+
+ FPS Counter/Limiter
+	- Timestep
+
+ Install SDL_ttf
+ SpriteFont
+
+ Audio
+
+ Particles
+
+ Lighting
+
+ Physics
+	- Box 2D
+	- Box Collisions
+	- Capsule Collisions
+	- Circle COllisions
+
+ CEGUI
+
+ Entity Component System
