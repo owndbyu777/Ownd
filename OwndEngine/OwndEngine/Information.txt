@@ -3,11 +3,50 @@ TODO:
  - Create Engine
 
  Install SDL
+	- Download SDL devel
+	- paste into deps
+	- put stuff from include folder into deps/include
+	- put stuff from lib x86 (NEED TO RESEARCH PORTING TO DIFFERENT PROCESSORS)
+		x86 -> 32 bit processor
+		x64 -> 64 bit processor
+		 folder into deps/lib/Release and deps/lib/Debug
+	- Only need to keep the include dlls, SDL2.lib and SDL2main.lib
+	- Need the to put SDL2.dll in the $(SolutionDir)Debug|$(SolutionDir)Release thing
  Install GLEW
+	- GLEW is an extension wrangler library thing (it handles extensions)
+	- Needs glew32.lib, the other lib is the static library
+		- needs glew32 dll also putting that in the debug/release solution dir thing
+	- Put the GL in the deps/include/ folder
  Install GLM
+	- Copy the inner glm folder (the one with all the header stuff) in the deps/include glm folder
+
+
+PROJECT PROPERTIES/DEPENDENCIES:
+	Library Dependencies:
+		SDL2.lib
+		SDL2main.lib
+		opengl32.lib
+		glew32.lib
+	Include Directory:
+		$(SolutionDir)deps\include
+	Library Directory for Debug:
+		$(SolutionDir)deps\lib\Debug
+	Library Directory for Release:
+		$(SolutionDir)deps\lib\Release
+	DLL directory for Debug:
+		$(SolutionDir)Debug
+	DLL directory for Release:
+		$(SolutionDir)Release
+	
+	$(SolutionDir) is the path to the Solution eg;
+		C:\Users\David\Source\Repos\Ownd\OwndEngine
+	your projects get placed in the solution directory. Same as the
+	Release and Debug folders which contain the exe for your project.
 
  Open Window
  Handle Input
+
+ Put it in IMainGame.cpp
 
  Shaders
 
@@ -22,6 +61,8 @@ TODO:
 
  FPS Counter/Limiter
 	- Timestep
+
+---	Make Into standalone Engine
 
  Install SDL_ttf
  SpriteFont
@@ -41,3 +82,11 @@ TODO:
  CEGUI
 
  Entity Component System
+
+ Porting to Web
+
+
+ ---------------------------------------------------------
+ ERROR LOGGING
+ When using other libraries, put it in a try...catch
+ TODO: decide how to handle init errors that are fatal
