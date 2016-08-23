@@ -3,7 +3,6 @@
 #include <string>
 #include <SDL/SDL.h>
 #include <glm/integer.hpp>
-#include <memory>
 
 namespace OWND {
 
@@ -17,6 +16,7 @@ namespace OWND {
 	class Window {
 	public:
 		glm::int8 create(std::string windowName, glm::uint16 screenWidth, glm::uint16 screenHeight, glm::uint32 currentWindowFlags);
+		void swapBuffer();
 	private:
 		SDL_Window* m_sdlWindow = nullptr;
 		glm::uint16 m_screenWidth = 0, m_screenHeight = 0;

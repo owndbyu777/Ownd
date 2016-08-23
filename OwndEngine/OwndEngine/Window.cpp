@@ -24,20 +24,20 @@ namespace OWND {
 			//Create the window
 			m_sdlWindow = SDL_CreateWindow(windowName.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, static_cast<int>(screenWidth), static_cast<int>(screenHeight), static_cast<Uint32>(flags));
 			if (m_sdlWindow == nullptr) {
-				throw InitError("SDL Window could not be created. " + static_cast<std::string>(SDL_GetError()), 0);
+				throw new InitError("SDL Window could not be created. " + static_cast<std::string>(SDL_GetError()), 0);
 			}
 
 			//Set up our OpenGL Context
 			SDL_GLContext glContext = SDL_GL_CreateContext(m_sdlWindow);
 			if (glContext == nullptr) {
-				throw InitError("SDL GL Context could not be created. " + static_cast<std::string>(SDL_GetError()), 1);
+				throw new InitError("SDL GL Context could not be created. " + static_cast<std::string>(SDL_GetError()), 1);
 			}
 
 			//Set up glew
 			glewExperimental = true;
 			GLenum error = glewInit();
 			if (error != GLEW_OK) {
-				throw InitError("Could not initialize glew. Error num: " + intToString(static_cast<int>(error)), 2);
+				throw new InitError("Could not initialize glew. Error num: " + intToString(static_cast<int>(error)), 2);
 			}
 
 			//std::cout << "*** OpenGL Version: " << glGetString(GL_VERSION) << " ***\n" << "To note: This progrm was made for OpenGL version 3.0 and up.\n";
@@ -52,10 +52,15 @@ namespace OWND {
 			//Enable alpha blend
 			//glEnable(m_blendType);
 			//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		} catch (InitError e) {
-			return e.getErrorNumber();
+		} catch (InitError* e) {
+			std::cout << "An init error occured while creating a window (" << e->getErrorNumber() << ": " << e->what() << "\n";
+			return e->getErrorNumber();
 		}
 		
 		return 0;
+	}
+	void Window::swapBuffer() {
+		//Swap our buffer and draw everything
+		SDL_GL_SwapWindow(m_sdlWindow);
 	}
 }

@@ -4,7 +4,7 @@
 
 int main(int argc, char** argv) {
 	OWND::IMainGame app;
-	app.init();
+	app.run();
 
 	int a;
 	std::cin >> a;

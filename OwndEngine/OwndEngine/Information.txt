@@ -17,6 +17,7 @@ TODO:
 	- Needs glew32.lib, the other lib is the static library
 		- needs glew32 dll also putting that in the debug/release solution dir thing
 	- Put the GL in the deps/include/ folder
+	- Don't forget to include opengl32.lib in the library dependencies
  Install GLM
 	- Copy the inner glm folder (the one with all the header stuff) in the deps/include glm folder
 
@@ -43,10 +44,10 @@ PROJECT PROPERTIES/DEPENDENCIES:
 	your projects get placed in the solution directory. Same as the
 	Release and Debug folders which contain the exe for your project.
 
- Open Window
- Handle Input
+ *Open Window
+ * Handle Input
 
- Put it in IMainGame.cpp
+ Sort out the handling of screens and stuff
 
  Shaders
 

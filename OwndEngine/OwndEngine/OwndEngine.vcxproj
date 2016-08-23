@@ -132,6 +132,7 @@
     <Text Include="Information.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="IGameScreen.cpp" />
     <ClCompile Include="IMainGame.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OwndConversions.cpp" />
@@ -140,6 +141,7 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="IGameScreen.h" />
     <ClInclude Include="IMainGame.h" />
     <ClInclude Include="OwndConversions.h" />
     <ClInclude Include="OwndEngine.h" />
